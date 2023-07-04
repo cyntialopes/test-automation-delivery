@@ -15,7 +15,7 @@ class HomePage(SetupPage):
         return self.is_url(url=self.url_login)
 
     def click_manager_btn(self):
-        self.driver.find_element(By.XPATH, self.manager_login_btn).click()
+        self.driver.find_element(By.XPATH, self.manager_login_btn)
 
     def click_customer_btn(self):
-        self.driver.find_element(By.XPATH, self.customer_login_btn).click()
+        self.driver.find_element(By.XPATH, self.customer_login_btn)
