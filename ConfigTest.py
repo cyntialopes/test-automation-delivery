@@ -3,7 +3,7 @@ from pages.HomePage import HomePage
 
 
 @pytest.fixture()
-def setup_browser():
+def setup():
     home_page = HomePage()
     yield home_page
     home_page.close()
