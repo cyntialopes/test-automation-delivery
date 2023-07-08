@@ -10,9 +10,12 @@ class SetupPage:
         else:
             raise ValueError("Invalid browser.")
         self.driver.implicitly_wait(3)
+        self.driver.maximize_window()
 
     def is_url(self, url):
         return self.driver.current_url == url
+
+
 
     def close(self):
         self.driver.quit()
