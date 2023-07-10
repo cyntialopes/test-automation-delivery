@@ -1,8 +1,7 @@
-import time
-
 from ConfigTest import open_page
 from pages.ManagerPage import ManagerPage
 from pages.CustomerPage import CustomerPage
+
 
 class Test003:
     def test_click_customers_btn(self, open_page):
@@ -17,7 +16,3 @@ class Test003:
         customer_page.click_customers_btn()
         assert customer_page.is_url_customers(), 'Error Page'
         customer_page.fill_in_search_fields()
-        time.sleep(2)
-
-
-
