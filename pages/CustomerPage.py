@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.SetupPage import SetupPage
 
+
 class CustomerPage(SetupPage):
     url_customers = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
     xpath_customers_btn = '/html/body/div/div/div[2]/div/div[1]/button[3]'
