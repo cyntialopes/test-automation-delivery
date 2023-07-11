@@ -27,4 +27,3 @@ class Test001:
         time.sleep(5)
         assert "Customer added successfully with customer id :" in alert_text, "Alert text does not match expectations"
         alert.accept()
-

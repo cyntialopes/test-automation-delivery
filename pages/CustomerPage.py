@@ -1,21 +1,25 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 from pages.SetupPage import SetupPage
 
 class CustomerPage(SetupPage):
-    url_customers = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
-    xpath_customers_btn = '/html/body/div/div/div[2]/div/div[1]/button[3]'
-    class_search_customer = 'form-control.ng-pristine.ng-untouched.ng-valid'
+    url_customer = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer'
+    id_your_name = 'userSelect'
+    xpath_login_btn = '/html/body/div/div/div[2]/div/form/button'
 
     def __init__(self, driver):
         super(CustomerPage, self).__init__(driver=driver)
-        self.driver.get(self.url_customers)
+        self.driver.get(self.url_customer)
 
     def is_url_customers(self):
-        return self.is_url(self.url_customers)
+        return self.is_url(self.url_customer)
 
-    def click_customers_btn(self):
-        self.driver.find_element(By.XPATH, self.xpath_customers_btn).click()
+    def click_your_name(self):
+        self.driver.find_element(By.ID, self.id_your_name).click()
 
-    def fill_in_search_fields(self, search_customer='Harry'):
-        self.driver.find_element(By.CLASS_NAME, self.class_search_customer).send_keys(search_customer)
+    def select_dropdown_value(self, value):
+        dropdown = Select(self.driver.find_element(By.ID, self.id_your_name))
+        dropdown.select_by_value(value)
 
+    def click_login_btn(self):
+        self.driver.find_element(By.XPATH, self.xpath_login_btn).click()
