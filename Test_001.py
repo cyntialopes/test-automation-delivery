@@ -24,6 +24,5 @@ class Test001:
         WebDriverWait(home_page.driver, 10).until(EC.alert_is_present())
         alert = home_page.driver.switch_to.alert
         alert_text = alert.text
-        time.sleep(5)
         assert "Customer added successfully with customer id :" in alert_text, "Alert text does not match expectations"
         alert.accept()
