@@ -21,6 +21,3 @@ class Test001:
         alert_text = manager_page.click_alert(open_page)
         assert "Customer added successfully with customer id :" \
                in alert_text, "Alert text does not match expectations"
-
-
-

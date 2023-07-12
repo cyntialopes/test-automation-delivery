@@ -8,6 +8,10 @@ class ManagerPage(SetupPage):
     url_manager = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager'
     xpath_add_customer_btn = '/html/body/div/div/div[2]/div/div[1]/button[1]'
     xpath_open_account_btn = '/html/body/div/div/div[2]/div/div[1]/button[2]'
+    xpath_customers_btn = '/html/body/div/div/div[2]/div/div[1]/button[3]'
+    url_manager_list = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
+    class_search_customer = 'form-control.ng-pristine.ng-untouched.ng-valid'
+
 
     def __init__(self, driver):
         super(ManagerPage, self).__init__(driver=driver)
@@ -29,3 +33,13 @@ class ManagerPage(SetupPage):
         alert_text = alert.text
         alert.accept()
         return alert_text
+
+    def is_url_manager_list(self):
+        return self.is_url(self.url_manager_list)
+
+    def click_customers_btn(self):
+        self.driver.find_element(By.XPATH, self.xpath_customers_btn).click()
+
+    def fill_in_search_fields(self, search_customer='Harry'):
+        self.driver.find_element(By.CLASS_NAME, self.class_search_customer).send_keys(search_customer)
+
