@@ -3,7 +3,7 @@ from pages.AccountPage import AccountPage
 from pages.CustomerPage import CustomerPage
 
 class Test005:
-    def test_click_customers_btn(self, open_page):
+    def test_account_page_deposit(self, open_page):
         home_page = open_page
         home_page.click_customer_btn()
 
@@ -16,7 +16,7 @@ class Test005:
         account_page = AccountPage(home_page.driver)
         assert account_page.is_url_account(), 'Error Page'
         account_page.click_first_deposit_btn()
-        account_page.enter_value()
+        account_page.enter_value_deposit()
         account_page.click_second_deposit_btn()
-        assert account_page.is_deposit_successful(), 'Deposit was not successful'
+        assert account_page.deposit_successful_mgs(), 'Deposit was not successful'
 

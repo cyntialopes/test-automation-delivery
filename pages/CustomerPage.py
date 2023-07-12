@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from pages.SetupPage import SetupPage
 
+
 class CustomerPage(SetupPage):
     url_customer = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer'
     id_your_name = 'userSelect'
