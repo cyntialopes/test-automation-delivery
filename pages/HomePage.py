@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.SetupPage import SetupPage
 
+
 class HomePage(SetupPage):
     url_init = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'
     xpath_manager_login_btn = '/html/body/div[1]/div/div[2]/div/div[1]/div[2]/button'

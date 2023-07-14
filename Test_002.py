@@ -1,7 +1,6 @@
 from ConfigTest import open_page
 from pages.ManagerPage import ManagerPage
 from pages.OpenAccountPage import OpenAccountPage
-import time
 
 
 class Test002:
@@ -24,7 +23,6 @@ class Test002:
         assert selected_currency == currency, 'Invalid currency'
 
         open_account.click_process()
-        time.sleep(3)
         alert_text = open_account.click_alert()
         assert "Account created successfully with account Number :" \
                in alert_text, "Alert text does not match expectations"

@@ -1,5 +1,4 @@
 from ConfigTest import open_page
-import time
 from pages.AddCustomerPage import AddCustomerPage
 from pages.ManagerPage import ManagerPage
 
