@@ -3,6 +3,7 @@ from ConfigTest import open_page
 from pages.AccountPage import AccountPage
 from pages.CustomerPage import CustomerPage
 
+
 class Test007:
     def test_account_page_deposit(self, open_page):
         home_page = open_page
