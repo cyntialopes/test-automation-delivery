@@ -1,6 +1,6 @@
 from ConfigTest import open_page
 from pages.SearchCustomerPage import SearchCustomerPage
-from pages.TransactionsPage import TransactionsPage
+from pages.AccountPage import AccountPage
 from pages.TransactionsReportPage import TransactionsReportPage
 
 
@@ -17,8 +17,8 @@ class Test004:
         assert select_customer == customer_name, 'Invalid Customer'
 
         search_customer.click_login_btn()
-        transactions = TransactionsPage(home_page.driver)
-        assert transactions.is_url_transaction(), 'Error Page'
+        transactions = AccountPage(home_page.driver)
+        assert transactions.is_url_account(), 'Error Page'
         assert transactions.is_customer_selected() == customer_name, 'Customer is not selected'
 
         transactions.click_transaction_btn()
@@ -27,5 +27,5 @@ class Test004:
         assert transactions_list.is_table_displayed(), 'Table not displayed'
 
         transactions_list.click_back_btn()
-        assert transactions.is_url_transaction(), 'Error Page'
+        assert transactions.is_url_account(), 'Error Page'
         assert transactions.is_customer_selected() == customer_name, 'Customer is not selected'

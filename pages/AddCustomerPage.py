@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.SetupPage import SetupPage
 
+
 class AddCustomerPage(SetupPage):
     url_add_customer = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust'
     xpath_first_name = '/html/body/div/div/div[2]/div/div[2]/div/div/form/div[1]/input'

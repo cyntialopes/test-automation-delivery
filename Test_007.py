@@ -1,4 +1,3 @@
-import time
 from ConfigTest import open_page
 from pages.AccountPage import AccountPage
 from pages.CustomerPage import CustomerPage
@@ -20,6 +19,5 @@ class Test007:
         account_page.click_withdrawl_btn()
         account_page.enter_value_withdrawl()
         account_page.click_second_withdrawl_btn()
-        time.sleep(2)
-        assert account_page.withdrawl_failed_mgs(), 'Message is different than expected'
-        time.sleep(1)
+        assert account_page.withdrawl_failed_mgs() == 'Transaction Failed. ' \
+                                                      'You can not withdraw amount more than the balance.'

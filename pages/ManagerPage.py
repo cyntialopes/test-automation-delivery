@@ -6,12 +6,12 @@ from pages.SetupPage import SetupPage
 
 class ManagerPage(SetupPage):
     url_manager = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager'
+    url_manager_list = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
     xpath_add_customer_btn = '/html/body/div/div/div[2]/div/div[1]/button[1]'
     xpath_open_account_btn = '/html/body/div/div/div[2]/div/div[1]/button[2]'
     xpath_customers_btn = '/html/body/div/div/div[2]/div/div[1]/button[3]'
-    url_manager_list = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
     class_search_customer = 'form-control.ng-pristine.ng-untouched.ng-valid'
-
+    xpath_customer_name = '/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]'
 
     def __init__(self, driver):
         super(ManagerPage, self).__init__(driver=driver)
@@ -43,3 +43,5 @@ class ManagerPage(SetupPage):
     def fill_in_search_fields(self, search_customer='Harry'):
         self.driver.find_element(By.CLASS_NAME, self.class_search_customer).send_keys(search_customer)
 
+    def is_customer_name(self):
+        return self.driver.find_element(By.XPATH, self.xpath_customer_name).text
