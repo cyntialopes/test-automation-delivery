@@ -15,7 +15,5 @@ class SetupPage:
     def is_url(self, url):
         return self.driver.current_url == url
 
-
-
     def close(self):
         self.driver.quit()
